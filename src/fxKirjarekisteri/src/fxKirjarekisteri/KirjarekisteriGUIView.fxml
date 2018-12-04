@@ -9,6 +9,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -25,8 +26,8 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </BorderPane.margin>
                <children>
-                  <Button text="_Uusi teos" />
-                  <Button contentDisplay="CENTER" text="_Tallenna" textAlignment="CENTER" />
+                  <Button onAction="#handleUusiTeos" text="_Uusi teos" />
+                  <Button contentDisplay="CENTER" onAction="#handleTallenna" text="_Tallenna" textAlignment="CENTER" />
                </children>
             </HBox>
          </bottom>
@@ -45,22 +46,22 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="629.0">
                      <children>
-                        <GridPane alignment="TOP_CENTER" gridLinesVisible="true" hgap="10.0" layoutX="14.0" layoutY="45.0" prefWidth="200.0">
+                        <GridPane alignment="TOP_CENTER" hgap="10.0" layoutX="14.0" layoutY="45.0" prefWidth="200.0">
                           <columnConstraints>
                             <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
                             <ColumnConstraints hgrow="ALWAYS" />
                           </columnConstraints>
                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <padding>
                               <Insets left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <children>
-                              <Label text="Kirjailijan nimi:" />
+                              <Label prefHeight="17.0" prefWidth="136.0" text="Kirjailijan nimi:" />
                               <Label text="Syntymävuosi:" GridPane.rowIndex="1" />
                               <Label text="Kuolinvuosi:" GridPane.rowIndex="2" />
                               <Label text="Kotimaa:" GridPane.rowIndex="3" />
@@ -70,11 +71,11 @@
                               <TextField GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
-                        <GridPane gridLinesVisible="true" hgap="10.0" layoutX="287.0" layoutY="45.0">
+                        <GridPane hgap="10.0" layoutX="287.0" layoutY="45.0">
                           <columnConstraints>
-                            <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
-                            <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
-                              <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
+                            <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="5.0" />
+                            <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="5.0" />
+                              <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="5.0" />
                               <ColumnConstraints hgrow="ALWAYS" />
                           </columnConstraints>
                           <rowConstraints>
@@ -82,6 +83,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <padding>
                               <Insets left="10.0" right="10.0" top="10.0" />
@@ -92,17 +94,17 @@
                               <Label text="Milloin luettu" GridPane.columnIndex="2" />
                               <TextField GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
                               <TextField GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
-                              <TextField GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+                              <TextField GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" />
                               <TextField GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
                               <TextField GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+                              <TextField GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" />
                               <TextField GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
                               <TextField GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+                              <TextField GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" />
                            </children>
                         </GridPane>
-                        <Button layoutX="287.0" layoutY="186.0" text="_Lisää kirja" />
-                        <Button layoutX="513.0" layoutY="186.0" text="_Poista kirja" />
+                        <Button layoutX="287.0" layoutY="186.0" onAction="#handleUusiKirja" text="_Lisää kirja" />
+                        <Button layoutX="513.0" layoutY="186.0" onAction="#handlePoista" text="_Poista kirja" />
                      </children>
                   </AnchorPane>
               </content>
@@ -115,15 +117,35 @@
         <menus>
           <Menu mnemonicParsing="false" text="Tiedosto">
             <items>
-              <MenuItem mnemonicParsing="false" text="Tallenna" />
-                  <MenuItem mnemonicParsing="false" text="Avaa.." />
-                  <MenuItem mnemonicParsing="false" text="Lopeta" />
+              <MenuItem mnemonicParsing="false" onAction="#handleTallenna" text="Tallenna">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Avaa..">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handleLopeta" text="Lopeta">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Muokkaa">
             <items>
-              <MenuItem mnemonicParsing="false" text="Lisää uusi kirja" />
-                  <MenuItem mnemonicParsing="false" text="Poista kirja" />
+              <MenuItem mnemonicParsing="false" onAction="#handleUusiKirja" text="Lisää uusi kirja">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handlePoista" text="Poista kirja">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Apua">

@@ -5,12 +5,14 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.Pane;
 
 
 /**
- * @author eemarant
+ * @author Eetu Rantakangas ja Timo Pakarinen
  * @version 18.10.2018
  *
+ * Kirjarekisteri luettujen kirjojen seuraamiseksi
  */
 public class KirjarekisteriMain extends Application {
 	@Override
