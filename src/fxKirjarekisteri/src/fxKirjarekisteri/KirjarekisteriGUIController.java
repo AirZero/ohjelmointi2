@@ -65,6 +65,18 @@ public class KirjarekisteriGUIController {
 		Dialogs.showMessageDialog("poistetaan! Mutta ei toimi vielä");
 	}
 	
+	/**
+	 * Ajaa tallennuksen ja antaa luvan ohjelman sulkemiseen tämän jälkeen.
+	 * @return
+	 */
+	public boolean voikoSulkea() {
+		boolean vastaus = Dialogs.showQuestionDialog("Poisto?",
+                "Tallennetaanko", "Kyllä", "Ei");
+		if (vastaus) {tallenna();}
+		
+		return true; 
+	}
+	
 	
 	
 	

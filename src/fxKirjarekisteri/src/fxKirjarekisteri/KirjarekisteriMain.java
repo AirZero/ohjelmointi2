@@ -17,15 +17,27 @@ import javafx.scene.layout.Pane;
 public class KirjarekisteriMain extends Application {
 	@Override
 	public void start(Stage primaryStage) {
-		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("KirjarekisteriGUIView.fxml"));
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("kirjarekisteri.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+		 try {
+		        FXMLLoader ldr = new FXMLLoader(getClass().getResource("KirjarekisteriGUIView.fxml"));
+		        final Pane root = (Pane)ldr.load();
+		        final KirjarekisteriGUIController kirjaCtrl = (KirjarekisteriGUIController)ldr.getController(); // kirjaCtrl ei välttämättä toimi tällä nimellä
+		        
+		        final Scene scene = new Scene(root);
+		        scene.getStylesheets().add(getClass().getResource("kirjarekisteri.css").toExternalForm());
+		        primaryStage.setScene(scene);
+		        primaryStage.setTitle("Kirjarekisteri");
+		        
+		        // Platform.setImplicitExit(false); // jos tämän laittaa, pitää itse sulkea
+		        
+		        primaryStage.setOnCloseRequest((event) -> {
+		            // Kutsutaan voikoSulkea-metodia
+		            if ( !kirjaCtrl.voikoSulkea() ) event.consume(); // kirjaCtrl ei välttämättä toimi tällä nimellä
+		        });
+		        
+		        primaryStage.show();
+		    } catch(Exception e) {
+		        e.printStackTrace();
+		    }
 	}
 	
 	/**
