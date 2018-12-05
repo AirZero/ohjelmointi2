@@ -1,4 +1,4 @@
-package fxKirjarekisteri;
+package rekisteri;
 
 /**
  * 
@@ -11,4 +11,6 @@ package fxKirjarekisteri;
 public class Kirjat {
 	
 
+	
+	
 }

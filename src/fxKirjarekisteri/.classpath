@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="C:/Users/ilman/Downloads/fxgui.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="kanta"/>
+	<classpathentry kind="src" path="rekisteri"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

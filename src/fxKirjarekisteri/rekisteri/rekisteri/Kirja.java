@@ -1,4 +1,4 @@
-package fxKirjarekisteri;
+package rekisteri;
 
 /**
  * 
