@@ -1,0 +1,25 @@
++--------------------------------------+--------------------------------------+
+| Luokan nimi:Kirja                    | Avustajat:                           |
++--------------------------------------+--------------------------------------+
+| Vastuualueet:                        |                                      |
+|                                      |                                      |
+| (- ei tiedä Lukijasta, eikä          |                                      |
+| käyttöliittymästä)                   |                                      |
+|                                      |                                      |
+| - tietää Kirjan kentät (nimi,        |                                      |
+|  julkaisuvuosi, genre, jne.)         |                                      |
+|                                      |                                      |
+| - osaa tarkistaa tietyn kentän       |                                      |
+| oikeellisuuden (syntaksin)           |                                      |
+|                                      |                                      |
+| - osaa muuttaa |Seitsemän veljestä|..|                                      |
+| merkkijonon jäsenen tiedoiksi        |                                      |
+|                                      |                                      |
+| - osaa antaa merkkijonona i:n kentän |                                      |
+| tiedot                               |                                      |
+|                                      |                                      |
+| - osaa laittaa merkkijonon i:neksi   |                                      |
+| kentäksi                             |                                      |
+|                                      |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
