@@ -1,0 +1,18 @@
++--------------------------------------+--------------------------------------+
+| Luokan nimi:Harrastukset             | Avustajat:                           |
++--------------------------------------+--------------------------------------+
+| Vastuualueet:                        | - Kirja                              |
+|                                      |                                      |
+| - pit‰‰ yll‰ varsinaista             |                                      |
+| kirjarekisteri‰, eli osaa lis‰t‰     |                                      |
+| ja poistaa Kirjan(eli lukusuorituksen|                                      |
+| )                                    |                                      |
+| - lukee ja kirjoittaa Kirjat         |                                      |
+| tiedostoon                           |                                      |
+|                                      |                                      |
+| - osaa etsi‰ ja lajitella            |                                      |
+|                                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+

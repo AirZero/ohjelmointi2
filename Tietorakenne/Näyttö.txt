@@ -1,0 +1,20 @@
++--------------------------------------+--------------------------------------+
+| Luokan nimi:Naytto                   | Avustajat:                           |
++--------------------------------------+--------------------------------------+
+| Vastuualueet:                        | - Kirjailija                         |
+|                                      |                                      |
+| - hoitaa kaiken näyttöön tulevan     | - Lukija                             |
+| tekstin                              |                                      |
+|                                      |                                      |
+| - hoitaa kaiken tiedon pyytämisen    |                                      |
+| käyttäjältä                          |                                      |
+|                                      |                                      |
+| (-  ei tiedä Lukijan eikä Kirjailijan|                                      |
+| yksityiskohtia)                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+

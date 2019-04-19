@@ -1,0 +1,18 @@
++--------------------------------------+--------------------------------------+
+| Luokan nimi:Kirjailijat              | Avustajat:                           |
++--------------------------------------+--------------------------------------+
+| Vastuualueet:                        | - Kirjailija                         |
+|                                      |                                      |
+| - pit‰‰ yll‰ varsinaista             |                                      |
+| kirjailijarekisteri‰,eli             |                                      |
+| osaa lis‰t‰ ja poistaa Kirjailijan   |                                      |
+|                                      |                                      |
+| - lukee ja kirjoittaa Kirjailijat    |                                      |
+| tiedostoon                           |                                      |
+|                                      |                                      |
+| - osaa etsi‰ ja lajitella            |                                      |
+|                                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+

@@ -1,0 +1,18 @@
++--------------------------------------+--------------------------------------+
+| Luokan nimi:Lukija                   | Avustajat:                           |
++--------------------------------------+--------------------------------------+
+| Vastuualueet:                        | - Kirjailijat                        |
+|                                      |                                      |
+| - huolehtii Kirjailija ja            | - Kirjat                             |
+| Kirjat -luokkien välisestä           |                                      |
+| yhteistyöstä ja välittää näitä       | - Kirjailija                         |
+| tietoja pyydettäessä                 |                                      |
+|                                      | - Kirja                              |
+| - lukee ja kirjoittaa Kirjarekisterin|                                      |
+| tiedostoon pyytämällä apua           |                                      |
+| avustajiltaan                        |                                      |
+|                                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
