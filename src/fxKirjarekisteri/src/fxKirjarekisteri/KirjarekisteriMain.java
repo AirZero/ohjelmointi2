@@ -2,6 +2,7 @@ package fxKirjarekisteri;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
+import rekisteri.Kirjat;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
@@ -42,8 +43,12 @@ public class KirjarekisteriMain extends Application {
 	
 	/**
 	 * @param args
+	 * @throws Exception 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		launch(args);
+		new Kirjat().lueTiedostosta();
+		
+		
 	}
 }

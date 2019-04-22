@@ -14,4 +14,16 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Kirjailijat.dat</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/data/Kirjailijat.dat</locationURI>
+		</link>
+		<link>
+			<name>Teokset.dat</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/data/Teokset.dat</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
