@@ -18,11 +18,22 @@ public class Kirjat {
 	
 	//"Kirjailijat.dat"
 	
+	/*
+    * <pre name="test">
+    *   Kirjat testi = new Kirjat();
+    * </pre>
+    */
+	
+	public Kirjat() {
+        
+    }
+
+	
 	public void lueTiedostosta(/*String tiedostoNimi*/)  throws Exception {
 		// todo poikkeuksenkäsittely
 		 try ( BufferedReader fi = new BufferedReader(new FileReader("Kirjailijat.dat"/*tiedostoNimi*/)) ) {
 	            kirjanNimi = fi.readLine();
-	            //if (kirjanNimi = null) throw new Exception("Kirjan nimi puuttuu");
+	  //          if (kirjanNimi = null) throw new Exception("Kirjan nimi puuttuu");
 	            System.out.println("testi");
 	            
 	}
