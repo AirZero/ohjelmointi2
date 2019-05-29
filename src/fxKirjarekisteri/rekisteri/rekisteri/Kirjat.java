@@ -2,6 +2,7 @@ package rekisteri;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Scanner;
 
 /**
  * 
@@ -14,7 +15,7 @@ import java.io.FileReader;
 public class Kirjat {
 	
 	//new Kirjat().lueTiedostosta();
-	String kirjanNimi;
+	static String kirjanNimi;
 	
 	//"Kirjailijat.dat"
 	
@@ -27,17 +28,47 @@ public class Kirjat {
 	public Kirjat() {
         
     }
+	
+	public static void main(String[] args) {
+		try {
+			lueTiedostosta();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	
-	public void lueTiedostosta(/*String tiedostoNimi*/)  throws Exception {
+	public static void lueTiedostosta(/*String tiedostoNimi*/)  throws Exception {
 		// todo poikkeuksenkäsittely
-		 try ( BufferedReader fi = new BufferedReader(new FileReader("Kirjailijat.dat"/*tiedostoNimi*/)) ) {
-	            kirjanNimi = fi.readLine();
-	  //          if (kirjanNimi = null) throw new Exception("Kirjan nimi puuttuu");
-	            System.out.println("testi");
+		String kirjatTaulukko[]; 
+		int riviNro = 0;
+		// try ( BufferedReader fi = new BufferedReader(new FileReader("C:/ohj2toimiva/ohjelmointi2/Teokset.dat"/*tiedostoNimi*/)) ) {
+	     Scanner sc = new Scanner(new BufferedReader(new FileReader("C:/ohj2toimiva/ohjelmointi2/Teokset.dat"/*tiedostoNimi*/)));
+			 //kirjanNimi = fi.readLine(); //Lukee tiedoston ensimmäiseltä riviltä sen nimen.
+	            String rivi;           
 	            
+	            
+	            
+	            int riviLkm = 3;
+	            int sarakeLkm = 6;
+	            String [][] kirjaTaulukko = new String[riviLkm][sarakeLkm];
+	            
+	           // while ((rivi = fi.readLine()) != null) {
+	          //  	System.out.println(rivi);
+	          //  	String kirjat[] = new String[riviNro];
+	          //  	riviNro++;
+	            while(sc.hasNextLine()) {	
+	            	 for (int i=0; i<kirjaTaulukko.length; i++) {
+	                     String[] line = sc.nextLine().trim().split("\\|");
+	                     
+	                     for (int j=0; j<line.length; j++) {
+	                    	 
+	                    	 kirjaTaulukko[i][j] = line[j].trim();
+	                    	 System.out.println(kirjaTaulukko[i][j]);
+	                     }
+	            }
+	            }     
 	}
-		 System.out.println("testi");
 	
-}
 }

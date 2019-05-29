@@ -18,12 +18,18 @@
 		<link>
 			<name>Kirjailijat.dat</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/data/Kirjailijat.dat</locationURI>
+			<locationURI>copy_PARENT/data/Kirjailijat.dat</locationURI>
 		</link>
 		<link>
 			<name>Teokset.dat</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/data/Teokset.dat</locationURI>
+			<locationURI>copy_PARENT/data/Teokset.dat</locationURI>
 		</link>
 	</linkedResources>
+	<variableList>
+		<variable>
+			<name>copy_PARENT</name>
+			<value>$%7BPARENT-1-ECLIPSE_HOME%7D/ohj2toimiva/ohjelmointi2</value>
+		</variable>
+	</variableList>
 </projectDescription>
