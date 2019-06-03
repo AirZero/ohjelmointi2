@@ -15,7 +15,8 @@ import java.util.Scanner;
 public class Kirjat {
 	
 	//new Kirjat().lueTiedostosta();
-	static String kirjanNimi;
+
+	
 	
 	//"Kirjailijat.dat"
 	
@@ -30,12 +31,19 @@ public class Kirjat {
     }
 	
 	public static void main(String[] args) {
+		
 		try {
 			lueTiedostosta();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	
+	
+	public void tallennaKantaan(String tallennettava, int rivi, int sarake) {
+		
 	}
 
 	
@@ -60,13 +68,16 @@ public class Kirjat {
 	          //  	riviNro++;
 	            while(sc.hasNextLine()) {	
 	            	 for (int i=0; i<kirjaTaulukko.length; i++) {
-	                     String[] line = sc.nextLine().trim().split("\\|");
-	                     
-	                     for (int j=0; j<line.length; j++) {
+	                    // String[] line = sc.nextLine().trim().split("\\|");
+	            		 Kirja kirja = new Kirja(sc.nextLine());
+	                /*     for (int j=0; j<line.length; j++) {
 	                    	 
-	                    	 kirjaTaulukko[i][j] = line[j].trim();
-	                    	 System.out.println(kirjaTaulukko[i][j]);
-	                     }
+	                    	// kirjaTaulukko[i][j] = line[j].trim();
+	                    	 //System.out.println(kirjaTaulukko[i][j]);
+	                    	 System.out.println(line [j]);
+	                    	 Kirja kirja = new Kirja(line[j]);
+	                    	 
+	                     }*/
 	            }
 	            }     
 	}
