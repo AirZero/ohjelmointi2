@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>fxKirjarekisteri</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Kirjailijat.dat</name>
+			<type>1</type>
+			<locationURI>copy_PARENT/data/Kirjailijat.dat</locationURI>
+		</link>
+		<link>
+			<name>Teokset.dat</name>
+			<type>1</type>
+			<locationURI>copy_PARENT/data/Teokset.dat</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>copy_PARENT</name>
+			<value>$%7BPARENT-1-ECLIPSE_HOME%7D/ohj2toimiva/ohjelmointi2</value>
+		</variable>
+	</variableList>
+</projectDescription>

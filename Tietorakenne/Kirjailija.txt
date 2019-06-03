@@ -1,0 +1,25 @@
++--------------------------------------+--------------------------------------+
+| Luokan nimi:Kirjailija               | Avustajat:                           |
++--------------------------------------+--------------------------------------+
+| Vastuualueet:                        |                                      |
+|                                      |                                      |
+| (- ei tiedä Lukijasta, eikä          |                                      |
+| käyttöliittymästä)                   |                                      |
+|                                      |                                      |
+| - tietää Kirjailijan kentät (nimi,   |                                      |
+|  syntymavuosi,kotimaa, jne.)         |                                      |
+|                                      |                                      |
+| - osaa tarkistaa tietyn kentän       |                                      |
+| oikeellisuuden (syntaksin)           |                                      |
+|                                      |                                      |
+| - osaa muuttaa |Aleksis Kivi|..| -   |                                      |
+| merkkijonon jäsenen tiedoiksi        |                                      |
+|                                      |                                      |
+| - osaa antaa merkkijonona i:n kentän |                                      |
+| tiedot                               |                                      |
+|                                      |                                      |
+| - osaa laittaa merkkijonon i:neksi   |                                      |
+| kentäksi                             |                                      |
+|                                      |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
