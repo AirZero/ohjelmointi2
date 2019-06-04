@@ -11,13 +11,15 @@ package Kirjarekisteri;
  */
 public class Kirja {
 
-	private int KirjailijaID;
-	private int KirjaID;
-	private String KirjanNimi;
-	private int Julkaisuvuosi;
-	private String LuettuPvm;
+	private int kirjailijaID;
+	private int kirjaID;
+	private String kirjanNimi;
+	private int julkaisuvuosi;
+	private String luettuPvm;
 	
+	private static int seuraavaNro = 1;
 	
+
 	/**
 	 * Muodostaja
 	 */
@@ -25,14 +27,38 @@ public class Kirja {
 		//
 	}
 	
+	
+	/**
+	 * @return lisätyn kirjan ID
+	 * @example
+	 * <pre name="test">
+	 * 
+	 * </pre>
+	 */
+	public int rekisteroi() {
+		kirjaID = seuraavaNro;
+		seuraavaNro++;
+		return kirjaID;
+	}
+	
+	/**
+	 * @param kirjailijaID alustetaan kirjailijan ID kirjalle
+	 */
+	public Kirja(int kirjailijaID) {
+		this.kirjailijaID = kirjailijaID;
+	}
+	
+	
+	
+	
 	/**
 	 * @return Kirjalijan ID
 	 * @example
 	 * <pre name="test">
 	 * </pre>
 	 */
-	public int KirjailijaID() {
-	    return KirjailijaID;
+	public int kirjailijaID() {
+	    return kirjailijaID;
 	}
 	
 	/**
@@ -41,8 +67,8 @@ public class Kirja {
 	 * <pre name="test">
 	 * </pre>
 	 */
-	public int KirjaID() {
-	    return KirjaID;
+	public int kirjaID() {
+	    return kirjaID;
 	}
 	
 	/**
@@ -51,8 +77,8 @@ public class Kirja {
 	 * <pre name="test">
 	 * </pre>
 	 */
-	public String KirjanNimi() {
-	    return KirjanNimi;
+	public String kirjanNimi() {
+	    return kirjanNimi;
 	}
 	
 	/**
@@ -61,8 +87,8 @@ public class Kirja {
 	 * <pre name="test">
 	 * </pre>
 	 */
-	public String LuettuPvm() {
-	    return LuettuPvm;
+	public String luettuPvm() {
+	    return luettuPvm;
 	}
 	
 	
@@ -72,8 +98,8 @@ public class Kirja {
 	 * <pre name="test">
 	 * </pre>
 	 */
-	public int Julkaisuvuosi() {
-	    return Julkaisuvuosi;
+	public int julkaisuvuosi() {
+	    return julkaisuvuosi;
 	}
 	
 	//Minkä tahansa kentän muuntaminen Stringiksi

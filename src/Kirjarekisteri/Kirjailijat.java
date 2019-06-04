@@ -7,7 +7,22 @@ package Kirjarekisteri;
  */
 public class Kirjailijat {
 	
-	private String[] kirjailijat;
+	
+	private static final int MAX_ALKIOT = 10;
+	private int lkm = 0;
+	private String tiedostonNimi = "";
+	private Kirjailija alkiot[] = new Kirjailija[MAX_ALKIOT];
+	
+	
+	/**
+	 * Oletusmuodostaja
+	 */
+	public Kirjailijat() {
+		//
+	}
+	
+	
+	
 
 	/**
 	 * Luo taulukon Kirjailijat-tiedostosta.
@@ -18,9 +33,12 @@ public class Kirjailijat {
 	
 	/**
 	 * Lisää |..|..-merkkijonon taulukkoon
+	 * @param kirjailija lisättävä kirjailija
 	 */
-	public void lisaa() {
-		//
+	public void lisaa(Kirjailija kirjailija) {
+		if (lkm >= alkiot.length) throw new IndexOutOfBoundsException("Liikaa alkioita!");
+		alkiot[lkm] = kirjailija;
+		lkm++;
 	}
 	
 	/**

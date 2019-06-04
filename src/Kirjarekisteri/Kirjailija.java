@@ -77,7 +77,7 @@ public class Kirjailija {
 	 * <pre name="test">
 	 * </pre>
 	 */
-	public int kuolinvuosi() {
+	public int getKuolinvuosi() {
 	    return kuolinvuosi;
 	}
 	
@@ -87,14 +87,20 @@ public class Kirjailija {
 	 * <pre name="test">
 	 * </pre>
 	 */
-	public String kotimaa() {
+	public String getKotimaa() {
 	    return kotimaa;
 	}
 	
-	//Mink‰ tahansa kent‰n muuntaminen Stringiksi
+	
 	@Override
 	public String toString() {
-		return kirjailijanNimi;
+		return "" +
+				getKirjailijaID() + "|" +
+				kirjailijanNimi + "|" +
+				syntymavuosi + "|" +
+				kuolinvuosi + "|" +
+				kotimaa;
+				
 		
 	}
 	
@@ -103,14 +109,17 @@ public class Kirjailija {
 	 * Kirjalijan tietojen tulostus
 	 */
 	public void tulosta() {
-		//Kaikkien tietojen tulostus, mallissa k‰ytet‰‰n Veskun metodia
+		System.out.println();
 	}
 	
 	/**
 	 * tietojen erottaminen |..|..-merkkijonosta
+	 * @param rivi xd
 	 */
-	public void parse() {
-		//
+	public void parse(String rivi) {
+		int alku = 0;
+		StringBuilder sb = new StringBuilder(rivi);
+		kirjailijaID = sb.substring(alku, sb.indexOf("|"));
 	}
 	
 	/**
@@ -132,7 +141,8 @@ public class Kirjailija {
 	 * @param args Testip‰‰ohjelma
 	 */
 	public static void main(String[] args) {
-		Kirjalija eino = New Kirjailija();
+		Kirjailija eino = new Kirjailija();
+		eino.rekisteroi();
 	}
 
 
