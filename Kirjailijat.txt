@@ -1,3 +1,0 @@
-Kirjailijat
-Sukunimi Etunimi       |Syntymävuosi  |Kuolinvuosi|Kotimaa        | ID   | Teosten ID:t |
-Auden Wystan Hugh      |1907          |1973       |Iso Britannia  | 1    |12            |
