@@ -28,6 +28,28 @@ public class Kirja {
 	}
 	
 	
+	public Kirja(String tiedot) {
+		ic Kirja(String kirjanTiedot) {
+			String testi = "Kirjailijan ID| Teoksen nimi             | Julkaisuvuosi| Luettu pvm  | Kirjan ID |";
+			String[] tiedot = testi.trim().split("\\|");
+	   	 	System.out.println(tiedot[0]);	
+	  
+				try {
+	        		setKirjailijanID(Integer.parseInt(tiedot[0]));
+	        		//System.out.println(getKirjailijanID());
+	        		setTeoksenNimi(tiedot[1]);
+	        		setJulkaisuvuosi(Integer.parseInt(tiedot[2]));
+	        		setLuettuPvm(tiedot[3]);
+	        		setKirjanID(Integer.parseInt(tiedot[4]));
+	        	
+	        	} catch (Exception e) {
+	    			// TODO Auto-generated catch block
+	    			e.printStackTrace();
+	    		
+	        }
+	}
+	
+	
 	/**
 	 * @return lisätyn kirjan ID
 	 * @example
