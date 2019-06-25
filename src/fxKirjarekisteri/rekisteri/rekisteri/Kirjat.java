@@ -80,4 +80,10 @@ public class Kirjat {
 
 
 	}
+
+
+	public void lueTiedostosta() {
+		// TODO Auto-generated method stub
+		
+	}
 }
