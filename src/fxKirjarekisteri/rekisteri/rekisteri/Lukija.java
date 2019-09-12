@@ -14,6 +14,6 @@ public class Lukija {
 	 * @param args ei käytössä
 	 */
 	public static void main(String args[]) {
-		Kirjat.alusta();
+		//
 	}
 }

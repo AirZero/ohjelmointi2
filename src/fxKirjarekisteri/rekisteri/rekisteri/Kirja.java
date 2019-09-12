@@ -3,52 +3,32 @@ package Kirjarekisteri;
 
 
 /**
- * @author Timo
- * @version 25.3.2019
+ * @author Timo Pakarinen & Eetu Rantakangas
+ * @version 14.8.2019
  * 
  * Hallinnoi yhden Kirjan tietojen syntaksia ja käsittelyä
  *
  */
 public class Kirja {
 
-	private int kirjailijaID;
-	private int kirjaID;
-	private String kirjanNimi;
-	private int julkaisuvuosi;
-	private String luettuPvm;
+	private int kirjailijaID = 0;
+	private int kirjaID = 0;
+	private String kirjanNimi = "";
+	private String julkaisuvuosi = "0";
+	private String luettuPvm = "0";
 	
 	private static int seuraavaNro = 1;
 	
-
+	
+	
 	/**
-	 * Muodostaja
+	 * Alustetaan kirja
 	 */
 	public Kirja() {
 		//
 	}
-	
-	
-	public Kirja(String tiedot) {
-		ic Kirja(String kirjanTiedot) {
-			String testi = "Kirjailijan ID| Teoksen nimi             | Julkaisuvuosi| Luettu pvm  | Kirjan ID |";
-			String[] tiedot = testi.trim().split("\\|");
-	   	 	System.out.println(tiedot[0]);	
-	  
-				try {
-	        		setKirjailijanID(Integer.parseInt(tiedot[0]));
-	        		//System.out.println(getKirjailijanID());
-	        		setTeoksenNimi(tiedot[1]);
-	        		setJulkaisuvuosi(Integer.parseInt(tiedot[2]));
-	        		setLuettuPvm(tiedot[3]);
-	        		setKirjanID(Integer.parseInt(tiedot[4]));
-	        	
-	        	} catch (Exception e) {
-	    			// TODO Auto-generated catch block
-	    			e.printStackTrace();
-	    		
-	        }
-	}
-	
+
+
 	
 	/**
 	 * @return lisätyn kirjan ID
@@ -75,60 +55,92 @@ public class Kirja {
 	
 	/**
 	 * @return Kirjalijan ID
-	 * @example
-	 * <pre name="test">
-	 * </pre>
 	 */
-	public int kirjailijaID() {
+	public int getKirjailijaID() {
 	    return kirjailijaID;
 	}
 	
 	/**
 	 * @return Kirjan ID
-	 * @example
-	 * <pre name="test">
-	 * </pre>
+
 	 */
-	public int kirjaID() {
+	public int getKirjaID() {
 	    return kirjaID;
 	}
 	
 	/**
 	 * @return Kirjan nimi
-	 * @example
-	 * <pre name="test">
-	 * </pre>
 	 */
-	public String kirjanNimi() {
+	public String getKirjanNimi() {
 	    return kirjanNimi;
 	}
 	
 	/**
 	 * @return Päivämäärä joilloin kirja luettiin loppuun
-	 * @example
-	 * <pre name="test">
-	 * </pre>
 	 */
-	public String luettuPvm() {
+	public String getLuettuPvm() {
 	    return luettuPvm;
 	}
 	
 	
 	/**
 	 * @return Kirjan julkaisuvuosi
-	 * @example
-	 * <pre name="test">
-	 * </pre>
 	 */
-	public int julkaisuvuosi() {
+	public String getJulkaisuvuosi() {
 	    return julkaisuvuosi;
 	}
 	
-	//Minkä tahansa kentän muuntaminen Stringiksi
+	/**
+	 * @param nro Kirjailijan ID
+	 */
+	public void setKirjailijaID(int nro) {
+		kirjailijaID = nro;
+	}
+	
+	/**
+	 * @param nro Kirjan ID
+	 */
+	public void setKirjaID(int nro) {
+		kirjaID = nro;
+	}
+	
+	/**
+	 * @param nimi Kirjan nimi
+	 * @return null
+	 */
+	public String setNimi(String nimi) {
+		kirjanNimi = nimi;
+		return null;
+	}
+	
+	/**
+	 * @param vuosi Kirjan julkaisuvuosi
+	 * @return null
+	 */
+	public String setJulkaisuvuosi(String vuosi) {
+		julkaisuvuosi = vuosi;
+		return null;
+	}
+	
+	/**
+	 * @param luettu Pvm, jolloi kirja luettiin loppuun
+	 * @return null
+	 */
+	public String setLuettu(String luettu) {
+		luettuPvm = luettu;
+		return null;
+	}
+	
+	
+
 	@Override
 	public String toString() {
-		return "";
-		
+		return ""+
+				kirjailijaID + "|" +
+				kirjaID + "|" +
+				kirjanNimi + "|" +
+				julkaisuvuosi + "|" +
+				luettuPvm;
 	}
 	
 
@@ -136,14 +148,36 @@ public class Kirja {
 	 * Kirjan tietojen tulostus
 	 */
 	public void tulosta() {
-		//Kaikkien tietojen tulostus, mallissa käytetään Veskun metodia
+		//Kaikkien tietojen tulostus
 	}
 	
 	/**
 	 * tietojen erottaminen |..|..-merkkijonosta
+	 * @param rivi Parsittava rivi tiedostosta
 	 */
-	public void parse() {
-		//
+	public void parse(String rivi) {
+		
+		StringBuilder sb = new StringBuilder(rivi);
+		String kirjailijaId = sb.substring(0, sb.indexOf("|"));
+		int nro = Integer.parseInt(kirjailijaId);
+		setKirjailijaID(nro);
+		sb.delete(0, sb.indexOf("|"));
+		sb.delete(0, 1);
+		String kirjaId = sb.substring(0, sb.indexOf("|"));
+		int numero = Integer.parseInt(kirjaId);
+		setKirjaID(numero);
+		sb.delete(0, sb.indexOf("|"));
+		sb.delete(0, 1);
+		String nimi = sb.substring(0, sb.indexOf("|"));
+		setNimi(nimi);
+		sb.delete(0, sb.indexOf("|"));
+		sb.delete(0, 1);
+		String vuosi = sb.substring(0, sb.indexOf("|"));
+		setJulkaisuvuosi(vuosi);
+		sb.delete(0, sb.indexOf("|"));
+		sb.delete(0, 1);
+		String pvm = sb.substring(0);
+		setLuettu(pvm);
 	}
 	
 	/**
@@ -153,22 +187,16 @@ public class Kirja {
 		//Ehtolauseilla kaikkien kenttien tarkastus samaan?
 	}
 	
-	/**
-	 * Merkkijono |..|..-merkkijonon i:nneksi kentäksi
-	 */
-	public void aseta() {
-		//
-	}
-	
-	
-	
+
 	/**
 	 * Testiohjelma kirjalle.
 	 * @param args ei käytössä
 	 */
 	public static void main(String args[]) {
-		//
-
+		Kirja testi = new Kirja();
+		
+		testi.parse("1|2|taisteluni|1938|10.1.2010");
+		System.out.println(testi.toString());
 
 	}
 	
